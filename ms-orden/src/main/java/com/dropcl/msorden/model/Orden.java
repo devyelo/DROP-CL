@@ -18,27 +18,27 @@ public class Orden {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Referencia al comprador en ms-usuario
+
     @NotNull(message = "El compradorId es obligatorio")
     @Column(name = "comprador_id", nullable = false)
     private Long compradorId;
 
-    // Referencia al vendedor en ms-usuario
+
     @NotNull(message = "El vendedorId es obligatorio")
     @Column(name = "vendedor_id", nullable = false)
     private Long vendedorId;
 
-    // Referencia al listing en ms-listing
+
     @NotNull(message = "El listingId es obligatorio")
     @Column(name = "listing_id", nullable = false, unique = true)
     private Long listingId;
 
-    // Referencia al producto en ms-producto
+
     @NotNull(message = "El productoId es obligatorio")
     @Column(name = "producto_id", nullable = false)
     private Long productoId;
 
-    // Referencia a la talla en ms-producto
+
     @NotNull(message = "El tallaId es obligatorio")
     @Column(name = "talla_id", nullable = false)
     private Long tallaId;

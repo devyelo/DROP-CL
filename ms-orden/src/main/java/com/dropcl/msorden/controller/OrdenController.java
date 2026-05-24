@@ -20,7 +20,7 @@ public class OrdenController {
     private static final Logger log = LoggerFactory.getLogger(OrdenController.class);
     private final OrdenService ordenService;
 
-    // POST /api/ordenes
+
     @PostMapping
     public ResponseEntity<?> crearOrden(@Valid @RequestBody CrearOrdenDTO dto) {
         log.info("Petición para crear orden para compradorId: {}", dto.getCompradorId());
@@ -33,7 +33,7 @@ public class OrdenController {
         }
     }
 
-    // GET /api/ordenes/{id}
+
     @GetMapping("/{id}")
     public ResponseEntity<?> obtenerPorId(@PathVariable Long id) {
         log.info("Petición para obtener orden con id: {}", id);
@@ -45,21 +45,21 @@ public class OrdenController {
         }
     }
 
-    // GET /api/ordenes/comprador/{compradorId}
+
     @GetMapping("/comprador/{compradorId}")
     public ResponseEntity<List<Orden>> obtenerPorComprador(@PathVariable Long compradorId) {
         log.info("Petición para obtener órdenes del comprador id: {}", compradorId);
         return ResponseEntity.ok(ordenService.obtenerPorComprador(compradorId));
     }
 
-    // GET /api/ordenes/vendedor/{vendedorId}
+
     @GetMapping("/vendedor/{vendedorId}")
     public ResponseEntity<List<Orden>> obtenerPorVendedor(@PathVariable Long vendedorId) {
         log.info("Petición para obtener órdenes del vendedor id: {}", vendedorId);
         return ResponseEntity.ok(ordenService.obtenerPorVendedor(vendedorId));
     }
 
-    // GET /api/ordenes/estado/{estado}
+
     @GetMapping("/estado/{estado}")
     public ResponseEntity<?> obtenerPorEstado(@PathVariable String estado) {
         log.info("Petición para obtener órdenes con estado: {}", estado);
@@ -71,7 +71,7 @@ public class OrdenController {
         }
     }
 
-    // PUT /api/ordenes/{id}/estado
+
     @PutMapping("/{id}/estado")
     public ResponseEntity<?> actualizarEstado(@PathVariable Long id,
                                               @Valid @RequestBody ActualizarOrdenDTO dto) {
@@ -84,7 +84,7 @@ public class OrdenController {
         }
     }
 
-    // PATCH /api/ordenes/{id}/cancelar
+
     @PatchMapping("/{id}/cancelar")
     public ResponseEntity<?> cancelarOrden(@PathVariable Long id) {
         log.info("Petición para cancelar orden id: {}", id);
