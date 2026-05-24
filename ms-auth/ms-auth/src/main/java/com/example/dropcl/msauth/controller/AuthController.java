@@ -22,7 +22,7 @@ public class AuthController {
 
     private final AuthService authService;
 
-    // POST /api/auth/register
+
     @PostMapping("/register")
     public ResponseEntity<?> registrar(@Valid @RequestBody RegisterRequestDTO dto) {
         log.info("Petición de registro recibida para: {}", dto.getEmail());
@@ -35,7 +35,7 @@ public class AuthController {
         }
     }
 
-    // POST /api/auth/login
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequestDTO dto) {
         log.info("Petición de login recibida para: {}", dto.getEmail());
@@ -48,7 +48,7 @@ public class AuthController {
         }
     }
 
-    // GET /api/auth/usuarios
+
     @GetMapping("/usuarios")
     public ResponseEntity<List<Usuario>> obtenerActivos() {
         log.info("Petición para obtener usuarios activos");
@@ -56,7 +56,7 @@ public class AuthController {
         return ResponseEntity.ok(usuarios);
     }
 
-    // GET /api/auth/usuarios/{id}
+
     @GetMapping("/usuarios/{id}")
     public ResponseEntity<?> obtenerPorId(@PathVariable Long id) {
         log.info("Petición para obtener usuario con id: {}", id);
@@ -69,7 +69,7 @@ public class AuthController {
         }
     }
 
-    // DELETE /api/auth/usuarios/{id}
+
     @DeleteMapping("/usuarios/{id}")
     public ResponseEntity<?> desactivar(@PathVariable Long id) {
         log.info("Petición para desactivar usuario con id: {}", id);
