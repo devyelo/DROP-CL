@@ -21,7 +21,7 @@ public class Notificacion {
     @Column(name = "usuario_id", nullable = false)
     private Long usuarioId;
 
-    @NotBlank(message = "El tipo de notificación es obligatorio")
+    @NotNull(message = "El tipo de notificación es obligatorio")
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TipoNotificacion tipo;

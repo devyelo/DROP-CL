@@ -4,7 +4,7 @@ import jakarta.validation.constraints.*;
 import lombok.Data;
 
 @Data
-public class NotificacionRequestDTO {
+public class NotificacionDto {
 
     @NotNull(message = "El ID del usuario es obligatorio")
     private Long usuarioId;
