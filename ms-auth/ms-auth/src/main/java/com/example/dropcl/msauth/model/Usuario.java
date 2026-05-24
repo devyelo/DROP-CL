@@ -43,14 +43,14 @@ public class Usuario {
     @Column(nullable = false)
     private Boolean activo;
 
-    // Se ejecuta automáticamente antes de persistir
+
     @PrePersist
     public void prePersist() {
         this.fechaRegistro = LocalDateTime.now();
         this.activo = true;
     }
 
-    // Enum interno para el rol
+
     public enum RolUsuario {
         COMPRADOR, VENDEDOR, ADMIN
     }
