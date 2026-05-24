@@ -1,6 +1,6 @@
 package com.dropcl.ms_notificacion.service.impl;
 
-import com.dropcl.ms_notificacion.dto.NotificacionRequestDTO;
+import com.dropcl.ms_notificacion.dto.NotificacionDto;
 import com.dropcl.ms_notificacion.model.Notificacion;
 import com.dropcl.ms_notificacion.repository.NotificacionRepository;
 import com.dropcl.ms_notificacion.service.NotificacionService;
@@ -20,7 +20,7 @@ public class NotificacionServiceImpl implements NotificacionService {
     private final NotificacionRepository notificacionRepository;
 
     @Override
-    public Notificacion crear(NotificacionRequestDTO dto) {
+    public Notificacion crear(NotificacionDto dto) {
         log.info("Creando notificación tipo {} para usuario {}", dto.getTipo(), dto.getUsuarioId());
 
         Notificacion notificacion = Notificacion.builder()
