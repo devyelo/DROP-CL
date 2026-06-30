@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    discovery:
+      enabled: false # Mantenemos esta configuración que tenías
+    gateway:
+      routes:
+        # Enrutamiento para tu microservicio de envíos
+        - id: ms-envio
+          uri: http://localhost:8081 # Asegúrate de que ms-envio corra en este puerto
+          predicates:
+            - Path=/api/v1/envios/**
+
+        # (Añade aquí las rutas para el resto de tus 10 microservicios de Drop CL siguiendo el mismo formato)
+        # Ejemplo:
+        # - id: ms-productos
+        #   uri: http://localhost:8082
+        #   predicates:
+        #     - Path=/api/v1/productos/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG # Mantenemos el nivel de log que tenías
