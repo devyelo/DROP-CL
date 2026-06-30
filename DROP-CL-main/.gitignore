@@ -1,0 +1,20 @@
+# Archivos compilados Java
+**/target/
+**/*.class
+**/*.jar
+
+# IDE IntelliJ
+**/.idea/
+**/*.iml
+
+# Maven
+**/mvnw
+**/mvnw.cmd
+**/.mvn/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Variables de entorno
+*.env 

@@ -1,0 +1,29 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: ms-envio
+
+  # Tu conexión a la base de datos MySQL
+  datasource:
+    url: jdbc:mysql://localhost:3306/dropCL_envio?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: "" # Se deja con comillas vacías si no tienes contraseña en tu MySQL local
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # Configuración de Hibernate/JPA
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    com.dropcl.msenvio: INFO
