@@ -1,0 +1,14 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Maven / Java
+target/
+*.class
+
+# Archivos comprimidos
+*.zip
+*.rar
+
+# Logs
+*.log
