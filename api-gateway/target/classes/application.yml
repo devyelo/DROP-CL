@@ -1,0 +1,19 @@
+server:
+  port: 8080 # El Gateway se mantiene en el 8080 para recibir al cliente
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    discovery:
+      enabled: false
+    gateway:
+      routes:
+        - id: ms-envio
+          uri: http://localhost:8089 # �Aqu� est� el cambio clave apuntando a tu puerto real!
+          predicates:
+            - Path=/api/v1/envios/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
